@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: test-backend
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/ionix_db?serverTimezone=America/Santiago&useLegacyDatetimeCode=false
+    username: test
+    password: test123
+    hikari:
+      connectionTimeout: 10000
+      maximumPoolSize: 5
+
+server:
+  port: 8181
+  servlet:
+    context-path: /${spring.application.name}/
+    
+management:
+  server:
+    base-path: /actuator/
+  endpoint:
+    health:
+      show-details: "ALWAYS"
+  endpoints:
+    web:
+      exposure:
+        include: "health"
+        
+cl:
+  ionix:
+    message:
+      exception:
+        duplicatedentry: DUPLICATED ENTRY EXCEPTION
+        badrequest: BAD REQUEST EXCEPTION
+        notfound: NOT FOUND EXCEPTION
+        nocontent: NO CONTENT EXCEPTION
+        invalidrutnumber: INVALID RUT NUMBER EXCEPTION
+        invalidrutformat: INVALID RUT FORMAT EXCEPTION
+    external-services:
+      search: https://sandbox.ionix.cl/test-tecnico/search?rut=
+    encryption:
+      key: ionix123456

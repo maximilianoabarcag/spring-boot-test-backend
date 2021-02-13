@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: "jdbc:h2:mem:db;DB_CLOSE_DELAY=-1"
+    username: test
+    password: test
+    
+cl:
+  ionix:
+    message:
+      exception:
+        duplicatedentry: DUPLICATED ENTRY EXCEPTION
+        badrequest: BAD REQUEST EXCEPTION
+        notfound: NOT FOUND EXCEPTION
+        nocontent: NO CONTENT EXCEPTION
+        invalidrutnumber: INVALID RUT NUMBER EXCEPTION
+        invalidrutformat: INVALID RUT FORMAT EXCEPTION
+    external-services:
+      search: https://sandbox.ionix.cl/test-tecnico/search?rut=
+    encryption:
+      key: ionix123456
