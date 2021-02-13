@@ -28,4 +28,5 @@ mvn spring-boot:run
 La ruta generada para swagger-ui es:
 [http://localhost:8181/test-backend/swagger-ui/](http://localhost:8181/test-backend/swagger-ui/)
 
-
+El informe de los test unitarios queda en la siguiente ruta:
+./target/site/jacoco/index.html
